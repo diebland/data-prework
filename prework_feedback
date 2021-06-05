@@ -1,0 +1,106 @@
+Hi Blandine! 🙋‍♂️ Here I send you some feedback about your prework 😀 
+
+There were a couple of exercises missing, I am not sure if it was because of any issue uploading the file. 
+
+In any case, we can see that you worked and even did many of the bonuses, which is great. 
+
+On the following lines I will send you some feedback about the prework exercises. Most of the are not about mistakes, they are proposals in case you would like to make changes in your code.
+
+1 - Snail-and-Well
+
+In the first exercise, the answer is 11. 
+
+In your response, the `nightly_distance` is always subtracted from the `daily_distance` before adding one day to the `days` variable. The issue with this is that the nightly distance should be subtracted only in the snail doesn't reach the 125cm. 
+
+Therefore, the `days += 1` should be added after the `while snail_position < well_height:` sentence. Then you update the `snail_position` adding the `daily_distance` and check if the `while snail_position < well_height:`. If not, subtract the nightly distance using `snail_position -= nightly_distance`. 
+
+This way it will keep checking and subtracting the nightly distance, until the `snail_position` is higher than 125cm. 
+
+Bonus: In this case, on the fifth day the snail reaches the 125cm, so if you would have counted 5 using snail_position >= 125 would have also been correct.
+
+You used a for loop, which is fine. Using a while loop like the previous exercise would have also been an option. 
+
+Finally, there is a library called Statistics that has a function to calculate the standard deviation. Here I send you some documentation:
+
+[geekforgeeks std documentation](https://www.geeksforgeeks.org/python-statistics-stdev/#:~:text=Statistics%20module%20in%20Python%20provides,rather%20than%20an%20entire%20population.&text=It%20is%20used%20to%20quantify,a%20set%20of%20data%20values.) 
+
+You can use it in all the exercises when they ask you to calculate the standard deviation. 
+
+Great job!
+
+2 - Duel-of-Sorcerers
+
+In the first task you put `spells = 10` to store the number of spells that the sourcerer casts. Another option would be to save it as `spells = len(gandalf)` or Saruman, so you do not need to count them (in case you did so). 
+
+In the third exercise of the bonus, it asks to check if the sourcerer has won three clashes in a row to check the winner. 
+
+Therefore, the best way of doing so is adding the following lines to your code:
+
+```python
+# In the first if a > b:
+    if a > b :
+        gandalf_wins += 1
+        saruman_wins = 0
+        if gandalf_wins == 3:
+            print(f'Gandalf has won {gandalf_wins} clashes in a row, he is the winner of the battle!\n')
+            break
+        else:
+            print(f"Gandalf wins this clash. It is the {gandalf_wins} victory in a row!\nSaruman's wins are reset to 0.\n")
+ 
+ # The opposite in the elif a < b: (Meaning, reset the gandal_wins to 0 and substitute the saruman_wins with gandalf_wins)
+
+ # Finally, you can add the following line after the elif sentence in case there is a tie:
+
+     else:
+        print('There has been a tie\n')
+```
+
+3 - Bus
+
+All good in this one, the logic of the exercise is correct 😀
+
+As a suggestion, a shorter way of doing it would be the following:
+
+```python
+
+passengers_at_stop = []
+total = 0
+
+for stop in stops:
+    total += stop[0] - stop[1]
+    passengers_at_stop.append(total)
+    
+print (passengers_at_stop)
+
+```
+Here it directly checks each tuple in the list (the two numbers between the parenthesis), it subtracts the second number from the first one. 
+
+4 - Robin-Hood 
+
+In this case we didn't get the full exercise. Is it because you had a problem uploading the file?
+
+If not and you try to do it, please let me know if you have any question. 
+
+5 - Temperature-Processor
+
+In the third exercise, one way of updating the list with a value to substitute the `0` could be to calculate the mean of the previous and next element. 
+
+This would be done using 
+
+```python
+temp_3am = int((temperatures_C[2] + temperatures_C[4]) / 2)
+temperatures_C[3] = temp_3am
+```
+This way you create a variable with the mean of the element in the second index of the list and the one in the fourth, and put it in the third element. 
+
+In the first exercise of the bonus, you need to create a list with the temperatures that are higher than 70. In order to do so, you can create an empty list, use a for loop with an if condition that iterates through `temperatures_C` and store the ones that are higher than 70 in that list.  
+
+Then, once you have that list you can check if there are four consecutive values with temperatures above 70. 
+
+6 - Rock-Paper-Scissors
+
+Same as in the Robin-Hood exercise. If you try to do it and have concrete questions, please let me know. 
+
+Congratulations on what you have learned so far, and keep up the good work. From now on enjoy this bootcamp and learn as much as possible 🚀 
+
+<img width=1000 src="./meme_prework.png">
